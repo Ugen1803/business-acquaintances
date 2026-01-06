@@ -12,9 +12,16 @@
         {
             "src": "/(.*)",
             "dest": "/index.html"
-        }
-    ],
-    "headers": [
+        },
+        {
+            "source": "/static/(.*)\\.(js|css|png|jpg|jpeg|webp|gif|svg|woff2?|eot|ttf|otf)$",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
         {
             "source": "/(.*)",
             "headers": [
@@ -41,15 +48,6 @@
                 {
                     "key": "Permissions-Policy",
                     "value": "geolocation=(), microphone=()"
-                }
-            ]
-        },
-        {
-            "source": "/static/(.*)\\.(js|css|png|jpg|jpeg|webp|gif|svg|woff2?|eot|ttf|otf)$",
-            "headers": [
-                {
-                    "key": "Cache-Control",
-                    "value": "public, max-age=31536000, immutable"
                 }
             ]
         }
