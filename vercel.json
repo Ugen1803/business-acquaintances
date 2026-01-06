@@ -14,7 +14,7 @@
             "dest": "/index.html"
         },
         {
-            "source": "/static/(.*)\\.(js|css|png|jpg|jpeg|webp|gif|svg|woff2?|eot|ttf|otf)$",
+            "src": "/static/(.*)\\.(js|css|png|jpg|jpeg|webp|gif|svg|woff2?|eot|ttf|otf)$",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -23,7 +23,7 @@
             ]
         },
         {
-            "source": "/(.*)",
+            "src": "/(.*)",
             "headers": [
                 {
                     "key": "X-Frame-Options",
